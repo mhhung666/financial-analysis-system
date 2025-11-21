@@ -7,7 +7,7 @@
 | 公司 | 類型 | 完成度 | 連結 |
 |------|------|--------|------|
 | AMRZ | 完整估值 | ✅ | [analysis/2025Q3/AMRZ/README.md](AMRZ/README.md) |
-| DKNG | 深度分析專案 | ✅ | [analysis/2025Q3/DKNG/README.md](DKNG/README.md) |
+| DKNG | 深度分析專案 | ⏳ 待建立 | 參考[公司檔案](../company-profiles/DKNG_profile.md) |
 | GOOGL | 深度分析專案 | ✅ | [analysis/2025Q3/GOOGL/README.md](GOOGL/README.md) |
 | INTC | 完整估值 | ✅ | [analysis/2025Q3/INTC/README.md](INTC/README.md) |
 | ORCL | 深度分析專案 | ✅ | [analysis/2025Q3/ORCL/README.md](ORCL/README.md) |

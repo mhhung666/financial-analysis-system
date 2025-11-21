@@ -98,12 +98,8 @@
   - ⚡ [5分鐘執行摘要](analysis/2025Q3/AMRZ/Executive-Summary.md) ｜ 📄 [深度分析](analysis/2025Q3/AMRZ/Analysis.md)
   - 📊 [財務報表筆記](analysis/2025Q3/AMRZ/Financial-Statements.md) ｜ 💰 [估值報告](analysis/2025Q3/AMRZ/Valuation-Report.md)
   - 🚀 [策略追蹤](analysis/2025Q3/AMRZ/Strategic-Initiatives.md) ｜ ⚠️ [風險分析](analysis/2025Q3/AMRZ/Risk-Analysis.md)
-- ✅✅ **[DKNG - DraftKings Inc.](analysis/2025Q3/DKNG/)** | **機構級深度分析 (95%)** | ⭐⭐⭐☆☆
-  - 📄 [15,000+ 字完整分析](analysis/2025Q3/DKNG/Q3-2025-Deep-Dive-Analysis.md)
-  - ⚡ [5分鐘執行摘要](analysis/2025Q3/DKNG/Executive-Summary.md)
-  - 📊 [完整估值報告](analysis/2025Q3/DKNG/DKNG-Valuation-Report.md)
-  - 📖 [專案導覽](analysis/2025Q3/DKNG/README.md)
-  - 🎯 基於三份完整文件：8-K, Earnings Call Transcript, 10-Q
+- ⏳ **DKNG - DraftKings Inc.** | **機構級深度分析 (待建立)** | ⭐⭐⭐☆☆
+  - 📋 詳細分析請參考 [公司檔案](analysis/company-profiles/DKNG_profile.md)
 - ✅✅✅ **[GOOGL - Alphabet Inc.](analysis/2025Q3/GOOGL/)** | **機構級深度分析 (100%)** | ⭐⭐⭐⭐⭐
   - 📄 [完整 Q3 財報分析](analysis/2025Q3/GOOGL/Analysis.md)
   - ⚡ [5分鐘執行摘要](analysis/2025Q3/GOOGL/Executive-Summary.md)
@@ -145,7 +141,7 @@
 - [ ] 待補充
 
 ### 歷史分析
-📦 查看 [archive/](archive/) 資料夾
+📦 archive 資料夾 (待建立)
 
 ---
 
@@ -180,17 +176,12 @@
   - [📋 公司檔案](analysis/company-profiles/AMRZ_profile.md)
 
 ### D-G
-- **DKNG** - DraftKings Inc. 🌟 **機構級深度分析**
-  - 最新：[Q3 2025 深度分析](analysis/2025Q3/DKNG/) ✅✅ (95% 完成度)
+- **DKNG** - DraftKings Inc.
+  - 最新：[公司檔案](analysis/company-profiles/DKNG_profile.md) (完整分析文件待建立)
   - 產業：線上博彩 / iGaming
   - 評級：⭐⭐⭐☆☆ **HOLD / Selective BUY**
   - 持倉：選擇權部位 (-2 張 Sell Put @ $27.50, 11/21到期)
   - 目標價：**$32-38** (潛在回報 +31%)
-  - 完整報告：
-    - [15,000+ 字深度分析](analysis/2025Q3/DKNG/Q3-2025-Deep-Dive-Analysis.md)
-    - [5分鐘執行摘要](analysis/2025Q3/DKNG/Executive-Summary.md)
-    - [完整估值報告](analysis/2025Q3/DKNG/DKNG-Valuation-Report.md)
-    - [專案導覽](analysis/2025Q3/DKNG/README.md)
   - 狀態：✅ **已建立初始部位** (2025-11-16)
 
 - **GOOGL** - Alphabet Inc. 🌟 **機構級深度分析**
@@ -312,11 +303,10 @@
 ## 📈 按產業查看
 
 ### 線上博彩 / iGaming
-- **[DKNG - DraftKings Inc.](analysis/2025Q3/DKNG/)** ⭐⭐⭐☆☆ 🌟 **機構級深度分析**
-  - 📊 完成度: **95%** (15,000+ 字)
+- **DKNG - DraftKings Inc.** ⭐⭐⭐☆☆
   - 💰 目標價: **$32-38**
   - 🎯 三大洞察: FCF 轉正 / 底層加速 / Predictions 新機會
-  - 📄 [完整分析](analysis/2025Q3/DKNG/Q3-2025-Deep-Dive-Analysis.md) | [快速摘要](analysis/2025Q3/DKNG/Executive-Summary.md)
+  - 📄 [公司檔案](analysis/company-profiles/DKNG_profile.md) (完整分析文件待建立)
   - 狀態: ✅ **已建立初始部位** (選擇權)
 
 ### 數位廣告 / 社交媒體 / AI
@@ -537,10 +527,13 @@
 ## 🔗 相關文件
 
 - 📖 [README.md](README.md) - 知識庫使用指南
+<!-- Portfolio 文件待建立 -->
+<!--
 - 💼 [portfolio/2025/holdings.md](portfolio/2025/holdings.md) - 持倉明細
 - 👀 [portfolio/2025/watchlist.md](portfolio/2025/watchlist.md) - 詳細觀察清單
 - 📊 [portfolio/2025/performance.md](portfolio/2025/performance.md) - 績效追蹤
 - ⚠️ [portfolio/2025/risk-matrix.md](portfolio/2025/risk-matrix.md) - 風險評估
+-->
 
 ---
 

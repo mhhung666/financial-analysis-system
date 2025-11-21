@@ -379,11 +379,13 @@ DraftKings 是美國最大的純線上博彩平台，享有規模優勢和品牌
 - 分析日期: 2025-11-10
 
 ## 完整分析報告
-📚 **詳細分析請參考**:
-- 🌟🌟 [Q3-2025-Deep-Dive-Analysis.md](../../analysis/2025Q3/DKNG/Q3-2025-Deep-Dive-Analysis.md) - 15,000+ 字完整分析
-- ⭐ [Executive-Summary.md](../../analysis/2025Q3/DKNG/Executive-Summary.md) - 5 分鐘快速摘要
-- 📊 [DKNG-Valuation-Report.md](../../analysis/2025Q3/DKNG/DKNG-Valuation-Report.md) - 估值分析報告
-- 📖 [README.md](../../analysis/2025Q3/DKNG/README.md) - 分析專案導覽
+📚 **完整深度分析文件待建立**
+
+計劃包含：
+- 15,000+ 字深度分析
+- 5 分鐘執行摘要
+- 完整估值報告
+- 專案導覽
 
 ## 最後更新
 2025-11-10 (基於三份完整文件的深度分析更新)
