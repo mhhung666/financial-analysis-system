@@ -68,7 +68,7 @@ make analyze-daily
 ### 手動執行腳本
 
 ```bash
-./tools/analyze_daily_market.sh
+./tools/utils/analyze_daily_market.sh
 ```
 
 ---
@@ -130,7 +130,7 @@ analysis/market/YYYY-MM-DD.md
 
 ### 分析腳本
 
-- **位置**: `tools/analyze_daily_market.sh`
+- **位置**: `tools/utils/analyze_daily_market.sh`
 - **語言**: Bash Shell Script
 - **AI 模型**: Claude Sonnet 4
 - **輸入資料**:
@@ -165,7 +165,7 @@ analysis/market/YYYY-MM-DD.md
 
 ### 修改 AI 模型
 
-編輯 `tools/analyze_daily_market.sh`：
+編輯 `tools/utils/analyze_daily_market.sh`：
 
 ```bash
 # 將 sonnet-4 改為其他模型
@@ -179,7 +179,7 @@ echo "${prompt}" | ${CLAUDE_CMD} -m opus-4 > "${ANALYSIS_OUTPUT}"
 
 ### 自定義提示詞
 
-編輯 `tools/analyze_daily_market.sh` 中的 `generate_analysis_prompt()` 函數。
+編輯 `tools/utils/analyze_daily_market.sh` 中的 `generate_analysis_prompt()` 函數。
 
 ---
 
@@ -232,7 +232,7 @@ Permission denied
 
 **解決方案**:
 ```bash
-chmod +x tools/analyze_daily_market.sh
+chmod +x tools/utils/analyze_daily_market.sh
 ```
 
 ---
@@ -267,7 +267,7 @@ cat analysis/market/2025-11-21.md
 
 ```bash
 # 指定日期分析（需修改腳本支援日期參數）
-./tools/analyze_daily_market.sh 2025-11-20
+./tools/utils/analyze_daily_market.sh 2025-11-20
 ```
 
 ### 整合到 Cron 定時任務

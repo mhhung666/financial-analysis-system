@@ -3,9 +3,9 @@
 PYTHON_SETUP_SCRIPT := tools/python/setup.sh
 FETCH_DAILY_SCRIPT := tools/python/fetch_daily_market_news.sh
 HOLDINGS_PRICES_SCRIPT := tools/python/fetch_holdings_prices.sh
-ANALYZE_DAILY_SCRIPT := tools/analyze_daily_market.sh
+ANALYZE_DAILY_SCRIPT := tools/utils/analyze_daily_market.sh
 FETCH_MARKET_SCRIPT := tools/python/fetch_market_data.sh
-CHECK_LINKS_SCRIPT := tools/check-links.sh
+CHECK_LINKS_SCRIPT := tools/utils/check-links.sh
 NEW_ANALYSIS_SCRIPT := tools/python/new_analysis.py
 
 help:

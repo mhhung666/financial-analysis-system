@@ -35,6 +35,11 @@ tools/
 │   ├── setup.sh                        # 環境安裝腳本
 │   ├── requirements.txt                # Python 依賴套件
 │   └── README.md                       # Python 工具說明
+├── utils/                               # 實用工具腳本
+│   ├── README.md                       # 工具說明
+│   ├── ANALYZE_DAILY_README.md         # Claude AI 分析系統完整文檔
+│   ├── analyze_daily_market.sh         # Claude AI 每日市場分析腳本
+│   └── check-links.sh                  # Markdown 連結檢查工具
 └── notebooks/                          # Jupyter Notebooks
     └── README.md
 ```
