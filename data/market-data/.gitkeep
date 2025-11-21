@@ -1,0 +1,11 @@
+# Market Data Directory
+
+此目錄用於存放市場數據，包括：
+- 股價歷史數據
+- 市場指標
+- 產業趨勢數據
+
+建議按照以下結構組織：
+- daily-prices/
+- indices/
+- sector-data/

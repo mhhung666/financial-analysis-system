@@ -1,0 +1,8 @@
+# Company Profiles Directory
+
+此目錄用於存放公司基本資料檔案。
+
+每個公司檔案應使用模板：templates/data/company-profile.md
+
+命名格式：[股票代碼]_profile.md
+例如：META_profile.md, GOOGL_profile.md

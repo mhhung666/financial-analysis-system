@@ -1,0 +1,87 @@
+# 財報分析知識庫 - Git 忽略文件
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# 編輯器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 虛擬環境
+venv/
+ENV/
+env/
+.venv/
+tools/python/venv/
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 分發 / 打包
+.eggs/
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Excel 臨時文件
+~$*.xlsx
+~$*.xls
+
+# PDF 草稿（保留最終版）
+*-draft.pdf
+*-temp.pdf
+
+# 大型 PDF 和數據文件（避免超過 GitHub 限制）
+data/financial-statements/**/*.pdf
+data/financial-statements/**/*.xls
+data/financial-statements/**/*.xlsx
+
+# 敏感數據（如果有）
+*.env
+credentials.json
+secrets.json
+api_keys.txt
+
+# 個人筆記（如不想分享）
+# personal-notes/
+
+# 大型數據文件（可選）
+# data/market-data/*.csv
+
+# 臨時文件
+*.tmp
+*.bak
+*.log
+
+# Node.js（如果使用）
+node_modules/
+npm-debug.log
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 系統文件
+.structure-overview.txt
