@@ -1,9 +1,10 @@
-.PHONY: help setup daily fetch-daily holdings-prices-daily analyze-daily fetch-market-data check-links new-analysis
+.PHONY: help setup daily fetch-daily holdings-prices-daily analyze-daily analyze-weekly fetch-market-data check-links new-analysis
 
 PYTHON_SETUP_SCRIPT := tools/python/setup.sh
 FETCH_DAILY_SCRIPT := tools/python/fetch_daily_market_news.sh
 HOLDINGS_PRICES_SCRIPT := tools/python/fetch_holdings_prices.sh
 ANALYZE_DAILY_SCRIPT := tools/utils/analyze_daily_market.sh
+ANALYZE_WEEKLY_SCRIPT := tools/utils/analyze_weekly_market.sh
 FETCH_MARKET_SCRIPT := tools/python/fetch_market_data.sh
 CHECK_LINKS_SCRIPT := tools/utils/check-links.sh
 NEW_ANALYSIS_SCRIPT := tools/python/new_analysis.py
@@ -15,6 +16,7 @@ help:
 	@echo "  make fetch-daily      # 爬取當日全球指數與市場新聞"
 	@echo "  make holdings-prices-daily # 分析持倉股票當天價格 + 爬取所有持股新聞"
 	@echo "  make analyze-daily    # 使用 Claude CLI 分析當日市場資料"
+	@echo "  make analyze-weekly   # 使用 Claude CLI 分析上週市場資料與氛圍"
 	@echo "  make fetch-market-data SYMBOL=UPS [ARGS=\"...\"]"
 	@echo "                        # 下載單一股票/匯率的歷史資料"
 	@echo "  make check-links      # 檢查 Markdown 連結是否有效"
@@ -39,6 +41,10 @@ holdings-prices-daily:
 analyze-daily:
 	@echo "開始使用 Claude 分析當日市場..."
 	@bash $(ANALYZE_DAILY_SCRIPT)
+
+analyze-weekly:
+	@echo "開始使用 Claude 分析上週市場氛圍..."
+	@bash $(ANALYZE_WEEKLY_SCRIPT)
 
 fetch-market-data:
 	@if [ -z "$(SYMBOL)" ]; then \
