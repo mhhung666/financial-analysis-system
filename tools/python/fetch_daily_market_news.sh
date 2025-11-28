@@ -115,8 +115,8 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# 將 Python 輸出轉換為陣列
-readarray -t INDICES_ARRAY <<< "$NEWS_INDICES"
+# 將 Python 輸出轉換為陣列 (使用兼容的方式)
+IFS=$'\n' read -r -d '' -a INDICES_ARRAY <<< "$NEWS_INDICES" || true
 
 # 如果沒有需要爬新聞的指數，跳過
 if [ ${#INDICES_ARRAY[@]} -eq 0 ] || [ -z "${INDICES_ARRAY[0]}" ]; then
