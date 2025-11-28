@@ -224,8 +224,8 @@ except Exception as e:
         exit 1
     fi
 
-    # 將 Python 輸出轉換為陣列
-    readarray -t HOLDINGS_ARRAY <<< "$HOLDINGS_LIST"
+    # 將 Python 輸出轉換為陣列 (使用兼容的方式)
+    IFS=$'\n' read -r -d '' -a HOLDINGS_ARRAY <<< "$HOLDINGS_LIST" || true
 
     # 如果沒有找到股票代碼，跳過
     if [ ${#HOLDINGS_ARRAY[@]} -eq 0 ] || [ -z "${HOLDINGS_ARRAY[0]}" ]; then
