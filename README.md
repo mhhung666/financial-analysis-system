@@ -28,6 +28,11 @@ make setup
 
 ```bash
 # 一鍵完成每日流程：爬取資料 + AI 分析
+
+# 選項 A: YAML 格式 (新版，推薦) - 結構化數據
+make daily-yaml
+
+# 選項 B: Markdown 格式 (舊版) - 直接可讀
 make daily
 ```
 
@@ -38,7 +43,11 @@ make daily
 
 輸出結果：
 - `data/market-data/2025/Daily/` - 市場資料
-- `analysis/market/YYYY-MM-DD.md` - AI 分析報告
+- `analysis/market/YYYY-MM-DD.yaml` - 結構化數據 (YAML 格式)
+- `analysis/market/YYYY-MM-DD.md` - AI 分析報告 (Markdown 格式)
+
+💡 **YAML 格式優勢**: 結構化數據便於程式處理、數據分析、格式轉換
+📚 **詳細說明**: [docs/YAML-WORKFLOW.md](docs/YAML-WORKFLOW.md) | [快速參考](docs/QUICK-REFERENCE.md)
 
 ### 3️⃣ 開始分析股票
 
@@ -74,7 +83,7 @@ financial-analysis-system/
 │   └── industries/     # 產業研究
 │
 ├── templates/          # 標準化模板
-│   ├── analysis/       # 分析模板
+│   ├── analysis/       # 市場分析模板（含 YAML 模板系統）
 │   ├── portfolio/      # 投資組合模板
 │   └── research/       # 研究模板
 │
@@ -95,10 +104,18 @@ financial-analysis-system/
 ### 每日市場追蹤
 
 ```bash
-make daily              # 完整每日流程（推薦）
+# 完整流程（推薦）
+make daily-yaml         # YAML 格式（新版，結構化數據）
+make daily              # Markdown 格式（舊版，直接可讀）
+
+# 分步執行
 make fetch-daily        # 只爬取市場資料
 make holdings-prices-daily  # 只更新持倉價格
-make analyze-daily      # 只執行 AI 分析
+make analyze-daily-yaml # 只執行 AI 分析（YAML）
+make analyze-daily      # 只執行 AI 分析（Markdown）
+
+# 格式轉換
+make yaml-to-md FILE=analysis/market/2025-12-01.yaml
 ```
 
 ### 資料收集
@@ -132,7 +149,14 @@ make new-analysis TICKER=AAPL NAME="Apple"  # 建立分析資料夾
 - 重要新聞解讀
 - 風險評估與投資策略
 
-**詳細文檔：** [tools/utils/ANALYZE_DAILY_README.md](tools/utils/ANALYZE_DAILY_README.md)
+**兩種輸出格式**：
+- 📊 **YAML 格式** (新版) - 結構化數據，便於程式處理、數據分析、格式轉換
+- 📝 **Markdown 格式** (舊版) - 直接可讀的報告格式
+
+**詳細文檔：**
+- [YAML 工作流程](docs/YAML-WORKFLOW.md) - 新版 YAML 格式說明
+- [快速參考](docs/QUICK-REFERENCE.md) - 常用指令速查
+- [每日分析說明](tools/utils/ANALYZE_DAILY_README.md) - 原有 Markdown 格式
 
 ### 📊 自動化資料爬取
 
@@ -182,7 +206,9 @@ make new-analysis TICKER=AAPL NAME="Apple"  # 建立分析資料夾
 
 **每日（5 分鐘）**
 ```bash
-make daily  # 自動化完成
+make daily-yaml  # 自動化完成（推薦 YAML 格式）
+# 或
+make daily       # 傳統 Markdown 格式
 ```
 查看 AI 分析報告，調整投資決策
 
@@ -204,22 +230,34 @@ make daily  # 自動化完成
 - [GIT_GUIDE.md](GIT_GUIDE.md) - Git 使用指南
 
 ### 各模組詳細文檔
+- [docs/YAML-WORKFLOW.md](docs/YAML-WORKFLOW.md) - YAML 工作流程完整說明 🆕
+- [docs/QUICK-REFERENCE.md](docs/QUICK-REFERENCE.md) - 快速參考卡片 🆕
 - [analysis/README.md](analysis/2025Q3/README.md) - 分析工作區說明
 - [portfolio/README.md](portfolio/README.md) - 投資組合追蹤
 - [tools/README.md](tools/README.md) - 自動化工具總覽
 - [tools/python/README.md](tools/python/README.md) - Python 爬蟲詳解
 - [tools/utils/README.md](tools/utils/README.md) - 實用工具說明
 - [templates/README.md](templates/README.md) - 模板使用指南
+- [templates/analysis/README.md](templates/analysis/README.md) - YAML 模板系統 🆕
 
 ---
 
 ## 🆕 最新更新
+
+### 2025-12-01 - YAML 模板系統上線
+- ✨ 新增 YAML 模板系統 - 結構化市場分析數據格式
+- ✨ `make daily-yaml` - 生成 YAML 格式報告（推薦）
+- ✨ YAML → Markdown 轉換工具
+- ✨ 數據與呈現分離，便於程式處理和數據分析
+- 📚 完整文檔：[YAML-WORKFLOW.md](docs/YAML-WORKFLOW.md)
 
 ### 2025-11-21
 - ✨ 新增 Claude AI 自動化市場分析系統
 - ✨ 一鍵命令 `make daily` 整合完整流程
 - ✨ 每日生成 15-20 頁專業市場分析報告
 - ✨ 重構工具目錄結構（`tools/utils/`）
+
+**完整更新日誌**: [CHANGELOG-YAML.md](CHANGELOG-YAML.md)
 
 ---
 
