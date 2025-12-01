@@ -1,0 +1,417 @@
+# 市場每日分析報告 - 範例
+# 此檔案展示如何使用模板填入實際數據
+
+metadata:
+  report_date: "2025-12-01"
+  report_time_utc: "20:50"
+  analyst: "AI Financial Analyst"
+  report_type: "daily_market_analysis"
+  version: "1.0"
+
+executive_summary:
+  market_overview:
+    title: "市場綜述"
+    description: "2025年12月1日,全球市場延續復甦態勢,美股三大指數齊步上揚。市場情緒明顯改善,VIX恐慌指數下跌,顯示投資者信心回升。聯準會12月降息預期升溫至73%,成為支撐市場的關鍵因素。"
+
+  key_metrics:
+    - metric: "S&P 500"
+      value: 6849.09
+      change_percent: 0.54
+      status: "穩健上升"
+      emoji: "🟢"
+
+    - metric: "Dow Jones"
+      value: 47716.42
+      change_percent: 0.61
+      status: "道瓊領漲"
+      emoji: "🟢"
+
+    - metric: "Nasdaq"
+      value: 23365.69
+      change_percent: 0.65
+      status: "科技反彈"
+      emoji: "🟢"
+
+    - metric: "VIX恐慌指數"
+      value: 16.35
+      change_percent: -6.09
+      status: "恐慌大降"
+      emoji: "🟢"
+
+    - metric: "黃金"
+      value: 4218.30
+      change_percent: 1.32
+      status: "避險續漲"
+      emoji: "🟢"
+      currency: "USD"
+
+    - metric: "比特幣"
+      value: 90940
+      change_percent: -0.40
+      status: "高位震蕩"
+      emoji: "🔴"
+      currency: "USD"
+
+  risk_assessment:
+    overall_market_risk:
+      level: 3
+      description: "VIX大降,市場恐慌消退"
+
+    tech_stock_risk:
+      level: 5
+      description: "AI擔憂緩解但估值仍高"
+
+    geopolitical_risk:
+      level: 4
+      description: "俄烏局勢穩定,中美關係平穩"
+
+    inflation_risk:
+      level: 3
+      description: "降息預期升溫,通膨壓力緩解"
+
+    concentration_risk:
+      level: 6
+      description: "科技股比重仍偏高"
+
+    overall_risk_score: 4.2
+
+global_markets:
+  us_market:
+    indices:
+      - name: "S&P 500"
+        code: "^GSPC"
+        close: 6849.09
+        change_percent: 0.54
+        volume: "2559M"
+        technical_status: "連五日上漲"
+
+      - name: "Dow Jones"
+        code: "^DJI"
+        close: 47716.42
+        change_percent: 0.61
+        volume: "273M"
+        technical_status: "道瓊領漲"
+
+      - name: "Nasdaq"
+        code: "^IXIC"
+        close: 23365.69
+        change_percent: 0.65
+        volume: "4541M"
+        technical_status: "科技反彈"
+
+      - name: "Russell 2000"
+        code: "^RUT"
+        close: 2500.43
+        change_percent: 0.58
+        volume: "2559M"
+        technical_status: "小型股同步"
+
+      - name: "費半指數"
+        code: "SOX"
+        close: 7025.15
+        change_percent: 1.82
+        technical_status: "半導體領漲"
+
+    market_analysis:
+      drivers:
+        - "聯準會12月降息機率從39%飆升至73%"
+        - "半導體強勢,費半指數大漲1.82%"
+        - "Intel (+10.28%) 因Apple合作傳聞領漲"
+      key_events:
+        - "連續第五個交易日上揚"
+        - "VIX暴跌6.09%,市場信心大幅回升"
+
+  asia_market:
+    indices:
+      - name: "日經225"
+        country: "日本"
+        code: "^N225"
+        close: 50253.91
+        change_percent: 0.17
+        volume: "98200K"
+
+      - name: "KOSPI"
+        country: "韓國"
+        code: "^KS11"
+        close: 3926.59
+        change_percent: -1.51
+        volume: 241923
+
+    analysis: "亞洲市場分化加劇,韓國KOSPI大跌1.51%,但KOSDAQ科技股暴漲3.71%,呈現明顯分化。日本穩定,日圓弱勢持續支撐出口企業。"
+
+  europe_market:
+    indices:
+      - name: "STOXX 50"
+        code: "^STOXX50E"
+        close: 5668.17
+        change_percent: 0.27
+
+      - name: "DAX"
+        country: "德國"
+        code: "^GDAXI"
+        close: 23836.79
+        change_percent: 0.29
+
+    analysis: "全面上漲,主要指數齊步上揚,德、法、英同步上漲約0.3%。英國央行12月降息機率達90%。"
+
+  market_drivers:
+    bullish_factors:
+      - "聯準會降息預期從39%飆升至73%"
+      - "VIX恐慌指數暴跌6.09%"
+      - "半導體板塊強勢反彈"
+      - "Intel因Apple合作傳聞暴漲10.28%"
+
+    bearish_factors:
+      - "Nasdaq錄得3月以來首次月線收黑"
+      - "油價持續疲軟"
+      - "比特幣轉跌0.40%"
+      - "美元指數下跌0.14%"
+
+portfolio_analysis:
+  overall_performance:
+    total_holdings: 15
+    stocks_up: 14
+    stocks_down: 1
+    stocks_flat: 0
+    win_rate_percent: 93.3
+    average_change_percent: 2.15
+    best_performer:
+      ticker: "LAZR"
+      change_percent: 11.03
+    worst_performer:
+      ticker: "OSCR"
+      change_percent: -1.05
+
+  major_losers: []
+
+  minor_losers:
+    - ticker: "OSCR"
+      name: "Oscar Health"
+      current_price: 17.97
+      change_percent: -1.05
+      recommendation: "持有"
+      analysis: "本週前兩日累計飆漲35%後,今日小幅回吐。ACA補貼延長政策利多已反映,短期漲幅過大需整理。"
+
+  strong_gainers:
+    - ticker: "LAZR"
+      name: "Luminar Tech"
+      current_price: 0.91
+      change_percent: 11.03
+      recommendation: "謹慎持有"
+      analysis: "Zacks評級從Hold升至Buy,引入重組專家應對債務壓力。但股價低於$1,財務風險沉重。"
+      catalysts:
+        - "Zacks升級評級至Buy"
+        - "引入重組專家"
+        - "與Mercedes、Volvo、Nvidia、Mobileye合作持續"
+
+    - ticker: "INTC"
+      name: "Intel"
+      current_price: 40.56
+      change_percent: 10.28
+      recommendation: "持有"
+      analysis: "Apple合作傳聞引爆漲勢,分析師Kuo報導Intel可能於2027年為Apple代工M系列處理器。"
+      catalysts:
+        - "Apple合作傳聞"
+        - "TSMC訴訟否認指控"
+        - "YTD累計上漲82%"
+
+  steady_performers:
+    - ticker: "GOOGL"
+      name: "Alphabet"
+      current_price: 320.18
+      change_percent: 0.07
+      recommendation: "持有"
+      analysis: "Meta考慮採購Google TPU晶片,顯示AI競爭力。Gemini 3表現優異,重回AI領先地位。"
+
+  position_recommendations:
+    buy_signals:
+      - ticker: "INTC"
+        reason: "Apple合作傳聞若成真,foundry業務將大躍進"
+        target_allocation_percent: 15
+
+      - ticker: "GOOGL"
+        reason: "Meta採購TPU顯示AI競爭力"
+        target_allocation_percent: 18
+
+    hold_positions:
+      - ticker: "GOOGL"
+        category: "核心持股"
+      - ticker: "INTC"
+        category: "核心持股"
+      - ticker: "TSLA"
+        category: "核心持股"
+
+    reduce_warnings:
+      - ticker: "LAZR"
+        reason: "財務壓力沉重,股價低於$1"
+        target_allocation_percent: 5
+
+      - ticker: "OSCR"
+        reason: "本週累漲35%,短期漲幅過大"
+        target_allocation_percent: 5
+
+    action_plan:
+      - action: "減碼"
+        ticker: "LAZR"
+        trigger_price: 0.95
+        target_percent: 5
+      - action: "獲利了結"
+        ticker: "OSCR"
+        trigger_price: 19.00
+        target_percent: 30
+
+risk_and_opportunity:
+  vix_analysis:
+    current_value: 16.35
+    change_percent: -6.09
+    status: "正常"
+    interpretation: "VIX單日暴跌6.09%,創近期最大單日降幅。回落至正常區間,有利於風險資產表現。"
+    recommendation: "可適度增加股票倉位至65-70%,保留部分現金應對12月FOMC"
+
+  commodities:
+    gold:
+      price: 4218.30
+      change_percent: 1.32
+      technical_analysis: "突破$4,200心理關卡,逼近歷史新高"
+      drivers:
+        - "聯準會降息預期從39%升至73%"
+        - "地緣政治不確定性"
+        - "美元指數下跌0.14%"
+      recommendation:
+        action: "持有"
+        target_allocation_percent: 10
+        entry_price_range:
+          low: 4100
+          high: 4150
+        stop_loss: 4000
+
+    oil:
+      price: 58.55
+      change_percent: -0.05
+      outlook: "華爾街預期2026年油價跌至$50區間,供給過剩風險"
+      impact_assessment:
+        affected_sectors:
+          - "航空股(ALK)受惠低油價"
+          - "物流股(UPS)受惠低油價"
+      recommendation:
+        action: "避開"
+        note: "不建議配置能源股"
+
+investment_strategy:
+  short_term:
+    market_view: "樂觀"
+    key_focuses:
+      - "降息催化: 73%機率12月降息"
+      - "半導體領漲: 費半指數 +1.82%"
+      - "年底效應: 留意稅務賣壓與作帳行情"
+
+    actions:
+      buy:
+        - ticker: "INTC"
+          reason: "Apple合作題材"
+          entry_price: 37
+          target_allocation_percent: 10
+
+        - ticker: "GOOGL"
+          reason: "AI競爭力提升"
+          entry_price: 315
+          target_allocation_percent: 10
+
+      sell:
+        - ticker: "LAZR"
+          reason: "財務壓力沉重"
+          exit_price: 0.95
+          target_allocation_percent: 5
+
+      hold:
+        - ticker: "TSLA"
+          monitoring_point: "FSD v14試駕轉換率"
+          support_level: 420
+
+    allocation:
+      stocks_percent: 70
+      bonds_percent: 20
+      gold_percent: 8
+      cash_percent: 2
+
+  mid_term:
+    outlook: "降息週期開啟,科技股估值修復"
+    themes:
+      - name: "AI基礎設施"
+        stocks: ["GOOGL", "INTC"]
+        target_allocation_percent: 35
+
+      - name: "醫療政策"
+        stocks: ["OSCR", "OPCH"]
+        target_allocation_percent: 12
+
+    triggers:
+      - condition: "12月降息25bp"
+        action: "加碼科技股5%"
+      - condition: "降息50bp"
+        action: "大幅加碼10%,減少債券"
+
+outlook:
+  key_catalysts:
+    upcoming_events:
+      - date: "2025-12-17"
+        event: "FOMC會議"
+        importance: 5
+        expected_impact: "決定降息與否,73%機率降息25bp"
+
+    positive_factors:
+      - "聯準會降息預期從39%飆升至73%"
+      - "半導體反彈,費半指數 +1.82%"
+      - "VIX暴跌6.09%,風險偏好回升"
+
+    negative_factors:
+      - "Nasdaq月線收黑,技術面轉弱"
+      - "估值壓力,S&P 500 PE超過20倍"
+      - "比特幣動能減弱"
+
+  scenarios:
+    bullish:
+      probability_percent: 50
+      conditions:
+        - "聯準會12月降息25bp"
+        - "Intel獲Apple代工訂單確認"
+        - "AI商業化加速"
+      expectations:
+        sp500_target: 7100
+        nasdaq_target: 24200
+        portfolio_return_percent: 12
+      strategy: "積極加碼科技股與AI相關標的"
+
+    base:
+      probability_percent: 40
+      conditions:
+        - "聯準會12月降息但2026年暫停"
+        - "AI投資持續但獲利緩慢兌現"
+      expectations:
+        sp500_range_low: 6750
+        sp500_range_high: 6900
+        portfolio_return_percent: 5
+      strategy: "維持現有配置,選股為主"
+
+disclaimer:
+  text: |
+    本報告僅供參考之用,不構成任何投資建議。報告中的分析與觀點基於公開資訊與市場數據,
+    但市場具有不確定性,過去績效不代表未來表現。
+
+  risk_warnings:
+    - "股票投資具有風險,本金可能損失"
+    - "科技股波動較大,需承受較高風險"
+    - "個股集中風險可能導致超額虧損"
+    - "市場突發事件可能影響投資組合"
+
+  recommendations:
+    - "投資前應充分了解自身風險承受能力"
+    - "分散投資,避免過度集中單一股票"
+    - "設定停損紀律,嚴格執行風險控制"
+    - "如有疑問,請諮詢專業投資顧問"
+
+report_metadata:
+  next_report_date: "2025-12-02"
+  contact: "ai-analyst@example.com"
+  generated_by: "AI Financial Analyst"
+  data_cutoff_time: "2025-12-01 20:50 UTC"

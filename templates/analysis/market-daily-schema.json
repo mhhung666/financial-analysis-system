@@ -1,0 +1,326 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Market Daily Analysis Template",
+  "description": "Schema for daily market analysis report",
+  "type": "object",
+  "required": [
+    "metadata",
+    "executive_summary",
+    "global_markets",
+    "portfolio_analysis",
+    "risk_and_opportunity",
+    "investment_strategy",
+    "outlook"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["report_date", "report_time_utc", "analyst", "report_type"],
+      "properties": {
+        "report_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Report date in YYYY-MM-DD format"
+        },
+        "report_time_utc": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):([0-5]\\d)$",
+          "description": "Report time in HH:MM UTC format"
+        },
+        "analyst": {
+          "type": "string"
+        },
+        "report_type": {
+          "type": "string",
+          "enum": ["daily_market_analysis"]
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "executive_summary": {
+      "type": "object",
+      "required": ["market_overview", "key_metrics", "risk_assessment"],
+      "properties": {
+        "market_overview": {
+          "type": "object",
+          "properties": {
+            "title": {"type": "string"},
+            "description": {"type": "string"}
+          }
+        },
+        "key_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["metric", "value", "change_percent"],
+            "properties": {
+              "metric": {"type": "string"},
+              "value": {"type": "number"},
+              "change_percent": {"type": "number"},
+              "status": {"type": "string"},
+              "emoji": {"type": "string"},
+              "currency": {"type": "string"}
+            }
+          }
+        },
+        "risk_assessment": {
+          "type": "object",
+          "properties": {
+            "overall_market_risk": {
+              "type": "object",
+              "properties": {
+                "level": {"type": "integer", "minimum": 0, "maximum": 10},
+                "description": {"type": "string"}
+              }
+            },
+            "tech_stock_risk": {
+              "type": "object",
+              "properties": {
+                "level": {"type": "integer", "minimum": 0, "maximum": 10},
+                "description": {"type": "string"}
+              }
+            },
+            "geopolitical_risk": {
+              "type": "object",
+              "properties": {
+                "level": {"type": "integer", "minimum": 0, "maximum": 10},
+                "description": {"type": "string"}
+              }
+            },
+            "inflation_risk": {
+              "type": "object",
+              "properties": {
+                "level": {"type": "integer", "minimum": 0, "maximum": 10},
+                "description": {"type": "string"}
+              }
+            },
+            "concentration_risk": {
+              "type": "object",
+              "properties": {
+                "level": {"type": "integer", "minimum": 0, "maximum": 10},
+                "description": {"type": "string"}
+              }
+            },
+            "overall_risk_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            }
+          }
+        }
+      }
+    },
+    "global_markets": {
+      "type": "object",
+      "required": ["us_market", "asia_market", "europe_market", "market_drivers"],
+      "properties": {
+        "us_market": {
+          "type": "object",
+          "properties": {
+            "indices": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {"type": "string"},
+                  "code": {"type": "string"},
+                  "close": {"type": "number"},
+                  "change_percent": {"type": "number"},
+                  "volume": {"type": "string"},
+                  "technical_status": {"type": "string"}
+                }
+              }
+            },
+            "market_analysis": {
+              "type": "object",
+              "properties": {
+                "drivers": {"type": "array", "items": {"type": "string"}},
+                "key_events": {"type": "array", "items": {"type": "string"}}
+              }
+            }
+          }
+        },
+        "asia_market": {
+          "type": "object",
+          "properties": {
+            "indices": {"type": "array"},
+            "analysis": {"type": "string"}
+          }
+        },
+        "europe_market": {
+          "type": "object",
+          "properties": {
+            "indices": {"type": "array"},
+            "analysis": {"type": "string"}
+          }
+        },
+        "market_drivers": {
+          "type": "object",
+          "properties": {
+            "bullish_factors": {"type": "array", "items": {"type": "string"}},
+            "bearish_factors": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      }
+    },
+    "portfolio_analysis": {
+      "type": "object",
+      "required": ["overall_performance"],
+      "properties": {
+        "overall_performance": {
+          "type": "object",
+          "properties": {
+            "total_holdings": {"type": "integer"},
+            "stocks_up": {"type": "integer"},
+            "stocks_down": {"type": "integer"},
+            "stocks_flat": {"type": "integer"},
+            "win_rate_percent": {"type": "number"},
+            "average_change_percent": {"type": "number"},
+            "best_performer": {
+              "type": "object",
+              "properties": {
+                "ticker": {"type": "string"},
+                "change_percent": {"type": "number"}
+              }
+            },
+            "worst_performer": {
+              "type": "object",
+              "properties": {
+                "ticker": {"type": "string"},
+                "change_percent": {"type": "number"}
+              }
+            }
+          }
+        },
+        "major_losers": {"type": "array"},
+        "minor_losers": {"type": "array"},
+        "strong_gainers": {"type": "array"},
+        "steady_performers": {"type": "array"},
+        "position_recommendations": {
+          "type": "object",
+          "properties": {
+            "buy_signals": {"type": "array"},
+            "hold_positions": {"type": "array"},
+            "reduce_warnings": {"type": "array"},
+            "action_plan": {"type": "array"}
+          }
+        }
+      }
+    },
+    "news_analysis": {
+      "type": "object",
+      "properties": {
+        "by_sector": {
+          "type": "object",
+          "properties": {
+            "technology": {"type": "array"},
+            "healthcare": {"type": "array"},
+            "finance": {"type": "array"},
+            "other": {"type": "array"}
+          }
+        }
+      }
+    },
+    "risk_and_opportunity": {
+      "type": "object",
+      "required": ["vix_analysis", "commodities", "bonds", "risk_matrix"],
+      "properties": {
+        "vix_analysis": {
+          "type": "object",
+          "properties": {
+            "current_value": {"type": "number"},
+            "change_percent": {"type": "number"},
+            "status": {"type": "string"},
+            "interpretation": {"type": "string"},
+            "recommendation": {"type": "string"}
+          }
+        },
+        "commodities": {
+          "type": "object",
+          "properties": {
+            "gold": {"type": "object"},
+            "oil": {"type": "object"},
+            "bitcoin": {"type": "object"}
+          }
+        },
+        "bonds": {"type": "object"},
+        "risk_matrix": {"type": "array"}
+      }
+    },
+    "investment_strategy": {
+      "type": "object",
+      "required": ["short_term", "mid_term", "long_term"],
+      "properties": {
+        "short_term": {
+          "type": "object",
+          "properties": {
+            "market_view": {"type": "string"},
+            "key_focuses": {"type": "array"},
+            "actions": {"type": "object"},
+            "allocation": {"type": "object"}
+          }
+        },
+        "mid_term": {"type": "object"},
+        "long_term": {"type": "object"}
+      }
+    },
+    "outlook": {
+      "type": "object",
+      "required": ["key_catalysts", "scenarios"],
+      "properties": {
+        "key_catalysts": {
+          "type": "object",
+          "properties": {
+            "upcoming_events": {"type": "array"},
+            "positive_factors": {"type": "array"},
+            "negative_factors": {"type": "array"}
+          }
+        },
+        "scenarios": {
+          "type": "object",
+          "properties": {
+            "bullish": {"type": "object"},
+            "base": {"type": "object"},
+            "bearish": {"type": "object"}
+          }
+        },
+        "future_outlook": {"type": "object"}
+      }
+    },
+    "monitoring_indicators": {
+      "type": "object",
+      "properties": {
+        "daily": {"type": "array"},
+        "weekly": {"type": "object"},
+        "portfolio_stocks": {"type": "object"}
+      }
+    },
+    "action_items": {
+      "type": "object",
+      "properties": {
+        "immediate": {"type": "array"},
+        "mid_term": {"type": "array"},
+        "long_term": {"type": "array"}
+      }
+    },
+    "disclaimer": {
+      "type": "object",
+      "properties": {
+        "text": {"type": "string"},
+        "risk_warnings": {"type": "array"},
+        "recommendations": {"type": "array"}
+      }
+    },
+    "report_metadata": {
+      "type": "object",
+      "properties": {
+        "next_report_date": {"type": "string"},
+        "contact": {"type": "string"},
+        "generated_by": {"type": "string"},
+        "data_cutoff_time": {"type": "string"}
+      }
+    }
+  }
+}

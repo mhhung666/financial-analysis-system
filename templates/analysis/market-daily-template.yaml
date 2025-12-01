@@ -1,0 +1,633 @@
+# 市場每日分析報告模板
+# 版本: 1.0
+# 說明: 此模板用於生成每日市場分析報告,包含所有必要的結構化數據
+
+metadata:
+  report_date: "YYYY-MM-DD"
+  report_time_utc: "HH:MM"
+  analyst: "AI Financial Analyst"
+  report_type: "daily_market_analysis"
+  version: "1.0"
+
+# 執行摘要
+executive_summary:
+  market_overview:
+    title: "市場綜述"
+    description: "簡述當日市場整體表現 (100-200字)"
+
+  key_metrics:
+    - metric: "S&P 500"
+      value: 0.00
+      change_percent: 0.00
+      status: "上漲/下跌/持平"
+      emoji: "🟢/🔴/🟡"
+
+    - metric: "Dow Jones"
+      value: 0.00
+      change_percent: 0.00
+      status: "上漲/下跌/持平"
+      emoji: "🟢/🔴/🟡"
+
+    - metric: "Nasdaq"
+      value: 0.00
+      change_percent: 0.00
+      status: "上漲/下跌/持平"
+      emoji: "🟢/🔴/🟡"
+
+    - metric: "VIX恐慌指數"
+      value: 0.00
+      change_percent: 0.00
+      status: "低/中/高"
+      emoji: "🟢/🟡/🔴"
+
+    - metric: "黃金"
+      value: 0.00
+      change_percent: 0.00
+      currency: "USD"
+
+    - metric: "比特幣"
+      value: 0.00
+      change_percent: 0.00
+      currency: "USD"
+
+  risk_assessment:
+    overall_market_risk:
+      level: 0  # 0-10
+      description: "低/中低/中等/中高/高"
+
+    tech_stock_risk:
+      level: 0
+      description: "評估說明"
+
+    geopolitical_risk:
+      level: 0
+      description: "評估說明"
+
+    inflation_risk:
+      level: 0
+      description: "評估說明"
+
+    concentration_risk:
+      level: 0
+      description: "持倉集中度風險"
+
+    overall_risk_score: 0.0  # 平均分數
+
+# 全球市場總覽
+global_markets:
+  us_market:
+    indices:
+      - name: "S&P 500"
+        code: "^GSPC"
+        close: 0.00
+        change_percent: 0.00
+        volume: "0M"
+        technical_status: "描述"
+
+      - name: "Dow Jones"
+        code: "^DJI"
+        close: 0.00
+        change_percent: 0.00
+        volume: "0M"
+        technical_status: "描述"
+
+      - name: "Nasdaq"
+        code: "^IXIC"
+        close: 0.00
+        change_percent: 0.00
+        volume: "0M"
+        technical_status: "描述"
+
+      - name: "Russell 2000"
+        code: "^RUT"
+        close: 0.00
+        change_percent: 0.00
+        volume: "0M"
+        technical_status: "描述"
+
+      - name: "費半指數"
+        code: "SOX"
+        close: 0.00
+        change_percent: 0.00
+        technical_status: "描述"
+
+    market_analysis:
+      drivers: []  # 上漲/下跌驅動因素列表
+      key_events: []  # 重要事件列表
+
+  asia_market:
+    indices:
+      - name: "日經225"
+        country: "日本"
+        code: "^N225"
+        close: 0.00
+        change_percent: 0.00
+        volume: "0K"
+
+      - name: "KOSPI"
+        country: "韓國"
+        code: "^KS11"
+        close: 0.00
+        change_percent: 0.00
+        volume: 0
+
+      - name: "台灣加權"
+        country: "台灣"
+        code: "^TWII"
+        close: 0.00
+        change_percent: 0.00
+        volume: "0M"
+
+      - name: "上證指數"
+        country: "中國"
+        code: "000001.SS"
+        close: 0.00
+        change_percent: 0.00
+        volume: 0
+
+      - name: "深證成指"
+        country: "中國"
+        code: "399001.SZ"
+        close: 0.00
+        change_percent: 0.00
+        volume: 0
+
+      - name: "恆生指數"
+        country: "香港"
+        code: "^HSI"
+        close: 0.00
+        change_percent: 0.00
+        volume: "0M"
+
+    analysis: "亞洲市場分析 (100-200字)"
+
+  europe_market:
+    indices:
+      - name: "STOXX 50"
+        code: "^STOXX50E"
+        close: 0.00
+        change_percent: 0.00
+
+      - name: "DAX"
+        country: "德國"
+        code: "^GDAXI"
+        close: 0.00
+        change_percent: 0.00
+
+      - name: "CAC 40"
+        country: "法國"
+        code: "^FCHI"
+        close: 0.00
+        change_percent: 0.00
+
+      - name: "FTSE 100"
+        country: "英國"
+        code: "^FTSE"
+        close: 0.00
+        change_percent: 0.00
+
+    analysis: "歐洲市場分析 (100-200字)"
+
+  market_drivers:
+    bullish_factors: []  # 上漲動力列表
+    bearish_factors: []  # 下行風險列表
+
+# 持倉股票分析
+portfolio_analysis:
+  overall_performance:
+    total_holdings: 0
+    stocks_up: 0
+    stocks_down: 0
+    stocks_flat: 0
+    win_rate_percent: 0.0
+    average_change_percent: 0.0
+    best_performer:
+      ticker: ""
+      change_percent: 0.0
+    worst_performer:
+      ticker: ""
+      change_percent: 0.0
+
+  # 股票分類
+  major_losers:  # 跌幅 > 3%
+    - ticker: ""
+      name: ""
+      current_price: 0.00
+      change_percent: 0.00
+      recommendation: "賣出/減碼/持有"
+      analysis: "分析說明"
+      action_items: []
+
+  minor_losers:  # 0% ~ -3%
+    - ticker: ""
+      name: ""
+      current_price: 0.00
+      change_percent: 0.00
+      recommendation: "持有/觀察"
+      analysis: "分析說明"
+
+  strong_gainers:  # > 5%
+    - ticker: ""
+      name: ""
+      current_price: 0.00
+      change_percent: 0.00
+      recommendation: "持有/獲利了結"
+      analysis: "分析說明"
+      catalysts: []  # 上漲催化劑
+
+  steady_performers:  # 0% ~ 5%
+    - ticker: ""
+      name: ""
+      current_price: 0.00
+      change_percent: 0.00
+      recommendation: "持有"
+      analysis: "分析說明"
+
+  # 持倉建議摘要
+  position_recommendations:
+    buy_signals:
+      - ticker: ""
+        reason: ""
+        target_allocation_percent: 0
+
+    hold_positions:
+      - ticker: ""
+        category: "核心持股/週期成長/高成長/穩健收益"
+
+    reduce_warnings:
+      - ticker: ""
+        reason: ""
+        target_allocation_percent: 0
+
+    action_plan:
+      - action: "具體操作建議"
+        ticker: ""
+        trigger_price: 0.00
+        target_percent: 0
+
+# 重要新聞解讀
+news_analysis:
+  by_sector:
+    technology:
+      - title: "新聞標題"
+        summary: "新聞摘要"
+        impact_analysis:
+          positive: []
+          negative: []
+          neutral: []
+        affected_holdings:
+          - ticker: ""
+            impact: "重大利多/利空/中性"
+            target_price_impact: 0.00
+
+    healthcare:
+      - title: ""
+        summary: ""
+        impact_analysis: {}
+        affected_holdings: []
+
+    finance:
+      - title: ""
+        summary: ""
+        impact_analysis: {}
+        affected_holdings: []
+
+    other:
+      - title: ""
+        summary: ""
+        impact_analysis: {}
+        affected_holdings: []
+
+# 風險評估與投資機會
+risk_and_opportunity:
+  vix_analysis:
+    current_value: 0.00
+    change_percent: 0.00
+    status: "極度平靜/正常/緊張/恐慌"
+    interpretation: "市場情緒解讀"
+    recommendation: "操作建議"
+
+  commodities:
+    gold:
+      price: 0.00
+      change_percent: 0.00
+      technical_analysis: ""
+      drivers: []
+      recommendation:
+        action: "持有/加碼/減碼"
+        target_allocation_percent: 0
+        entry_price_range:
+          low: 0.00
+          high: 0.00
+        stop_loss: 0.00
+
+    oil:
+      price: 0.00
+      change_percent: 0.00
+      outlook: "展望分析"
+      impact_assessment:
+        affected_sectors: []
+      recommendation: {}
+
+    bitcoin:
+      price: 0.00
+      change_percent: 0.00
+      market_dynamics: ""
+      key_points: []
+      recommendation: {}
+
+  bonds:
+    ten_year_treasury:
+      yield: 0.00
+      change_percent: 0.00
+
+    two_year_treasury:
+      yield: 0.00
+      change_percent: 0.00
+
+    yield_spread_bps: 0
+
+    insights:
+      yield_curve_analysis: ""
+      fomc_pricing: ""
+      inflation_outlook: ""
+      growth_stock_impact: ""
+
+    strategy:
+      stock_bond_ratio: "60/30/10"  # 股票/債券/其他
+      bond_allocation: ""
+      monitoring_indicators: []
+
+  risk_matrix:
+    - category: "市場風險"
+      level: 0  # 0-10
+      trend: "降低/持平/上升"
+      strategy: "應對策略"
+
+    - category: "AI泡沫"
+      level: 0
+      trend: ""
+      strategy: ""
+
+    - category: "利率風險"
+      level: 0
+      trend: ""
+      strategy: ""
+
+    - category: "地緣政治"
+      level: 0
+      trend: ""
+      strategy: ""
+
+    - category: "持倉集中度"
+      level: 0
+      trend: ""
+      strategy: ""
+
+    - category: "個股風險"
+      level: 0
+      trend: ""
+      strategy: ""
+
+# 投資策略建議
+investment_strategy:
+  short_term:  # 1-2週
+    market_view: "樂觀/中性/謹慎"
+    key_focuses: []
+
+    actions:
+      buy:
+        - ticker: ""
+          reason: ""
+          entry_price: 0.00
+          target_allocation_percent: 0
+
+      sell:
+        - ticker: ""
+          reason: ""
+          exit_price: 0.00
+          target_allocation_percent: 0
+
+      hold:
+        - ticker: ""
+          monitoring_point: ""
+          support_level: 0.00
+
+    allocation:
+      stocks_percent: 0
+      bonds_percent: 0
+      gold_percent: 0
+      cash_percent: 0
+
+  mid_term:  # 1-3個月
+    outlook: "展望說明"
+
+    themes:
+      - name: "投資主題"
+        stocks: []
+        target_allocation_percent: 0
+
+    adjustments:
+      increase:
+        - sector: ""
+          from_percent: 0
+          to_percent: 0
+          reason: ""
+
+      decrease:
+        - sector: ""
+          from_percent: 0
+          to_percent: 0
+          reason: ""
+
+    new_positions:
+      - ticker: ""
+        target_price_low: 0.00
+        target_price_high: 0.00
+        reason: ""
+
+    triggers:
+      - condition: "觸發條件"
+        action: "對應操作"
+
+  long_term:  # 6-12個月
+    macro_outlook: "宏觀預期"
+
+    core_holdings:  # 核心持倉 55-65%
+      - ticker: ""
+        allocation_percent: 0
+        thesis: "投資論點"
+
+    satellite_holdings:  # 衛星持倉 20-25%
+      - ticker: ""
+        allocation_percent: 0
+        thesis: ""
+
+    tactical_positions:  # 戰術倉位 5-10%
+      - ticker: ""
+        allocation_percent: 0
+        thesis: ""
+
+    defensive_allocation:  # 防禦配置 15-20%
+      gold_percent: 0
+      bonds_percent: 0
+      cash_percent: 0
+
+    target_annual_return_percent: 0
+
+    risk_controls:
+      single_stock_max_percent: 0
+      tech_sector_max_percent: 0
+      stop_loss_individual_percent: 0
+      stop_loss_portfolio_percent: 0
+
+# 後市展望
+outlook:
+  key_catalysts:
+    upcoming_events:
+      - date: "YYYY-MM-DD"
+        event: "事件名稱"
+        importance: 1-5  # 1-5星
+        expected_impact: "預期影響"
+
+    positive_factors: []
+    negative_factors: []
+
+  scenarios:
+    bullish:
+      probability_percent: 0
+      conditions: []
+      expectations:
+        sp500_target: 0
+        nasdaq_target: 0
+        portfolio_return_percent: 0
+      strategy: "操作策略"
+
+    base:
+      probability_percent: 0
+      conditions: []
+      expectations:
+        sp500_range_low: 0
+        sp500_range_high: 0
+        portfolio_return_percent: 0
+      strategy: ""
+
+    bearish:
+      probability_percent: 0
+      conditions: []
+      expectations:
+        sp500_target: 0
+        portfolio_return_percent: 0
+      strategy: ""
+
+  future_outlook:
+    macro_trends: []
+    investment_themes: []
+
+# 關鍵監控指標
+monitoring_indicators:
+  daily:
+    - indicator: "VIX指數"
+      current_value: 0.00
+      target_range: "15-20"
+      alert_level: ">25"
+
+    - indicator: "10年期殖利率"
+      current_value: "0.00%"
+      target_range: "3.8-4.2%"
+      alert_level: ">4.5%"
+
+    - indicator: "美元指數"
+      current_value: 0.00
+      target_range: "98-101"
+      alert_level: ">103"
+
+    - indicator: "黃金"
+      current_value: 0.00
+      target_range: "$4,000-4,300"
+      alert_level: "<$3,900"
+
+    - indicator: "原油"
+      current_value: 0.00
+      target_range: "$55-65"
+      alert_level: "<$50"
+
+    - indicator: "比特幣"
+      current_value: 0.00
+      target_range: "$85K-100K"
+      alert_level: "<$75K"
+
+  weekly:
+    economic_data:
+      - date: "MM/DD"
+        data: "資料名稱"
+        consensus: "市場預期"
+
+    earnings:
+      - date: "MM/DD"
+        company: "公司名稱"
+        ticker: ""
+
+    fed_events:
+      - date: "MM/DD"
+        event: "事件"
+        importance: "關鍵/重要/一般"
+
+  portfolio_stocks:
+    daily_tracking:
+      - ticker: ""
+        monitoring_reason: "監控原因"
+        stop_loss: 0.00
+        target_price: 0.00
+
+    weekly_tracking:
+      - ticker: ""
+        monitoring_metric: "監控指標"
+
+    monthly_tracking:
+      - ticker: ""
+        monitoring_metric: "監控指標"
+
+# 行動清單
+action_items:
+  immediate:  # 本週內
+    - task: "任務描述"
+      ticker: ""
+      target: "目標"
+      stop_loss: 0.00
+      rationale: "理由"
+      priority: "🔥/⭐⭐⭐⭐⭐"
+
+  mid_term:  # 12月中旬前
+    - task: ""
+      details: []
+      deadline: "YYYY-MM-DD"
+
+  long_term:  # 2026年1月
+    - task: ""
+      details: []
+
+# 免責聲明
+disclaimer:
+  text: |
+    本報告僅供參考之用,不構成任何投資建議。報告中的分析與觀點基於公開資訊與市場數據,
+    但市場具有不確定性,過去績效不代表未來表現。
+
+  risk_warnings:
+    - "股票投資具有風險,本金可能損失"
+    - "科技股波動較大,需承受較高風險"
+    - "個股集中風險可能導致超額虧損"
+    - "市場突發事件可能影響投資組合"
+
+  recommendations:
+    - "投資前應充分了解自身風險承受能力"
+    - "分散投資,避免過度集中單一股票"
+    - "設定停損紀律,嚴格執行風險控制"
+    - "如有疑問,請諮詢專業投資顧問"
+
+# 報告元數據
+report_metadata:
+  next_report_date: "YYYY-MM-DD"
+  contact: "email@example.com"
+  generated_by: "AI Financial Analyst"
+  data_cutoff_time: "YYYY-MM-DD HH:MM UTC"
