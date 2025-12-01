@@ -28,11 +28,6 @@ make setup
 
 ```bash
 # 一鍵完成每日流程：爬取資料 + AI 分析
-
-# 選項 A: YAML 格式 (新版，推薦) - 結構化數據
-make daily-yaml
-
-# 選項 B: Markdown 格式 (舊版) - 直接可讀
 make daily
 ```
 
@@ -43,11 +38,13 @@ make daily
 
 輸出結果：
 - `data/market-data/2025/Daily/` - 市場資料
-- `analysis/market/YYYY-MM-DD.yaml` - 結構化數據 (YAML 格式)
-- `analysis/market/YYYY-MM-DD.md` - AI 分析報告 (Markdown 格式)
+- `analysis/market/YYYY-MM-DD.md` - AI 分析報告 (文章式 Markdown)
 
-💡 **YAML 格式優勢**: 結構化數據便於程式處理、數據分析、格式轉換
-📚 **詳細說明**: [docs/YAML-WORKFLOW.md](docs/YAML-WORKFLOW.md) | [快速參考](docs/QUICK-REFERENCE.md)
+✨ **改進**: 報告現在使用結構化模板，確保格式一致性，同時保持自然流暢的文章風格
+
+📊 **進階選項**:
+- `make daily-yaml` - 生成 YAML 格式結構化數據 (適合程式處理)
+- 📚 詳細說明: [YAML 工作流程](docs/YAML-WORKFLOW.md) | [模板說明](templates/analysis/market-daily-article-template.md)
 
 ### 3️⃣ 開始分析股票
 
@@ -149,14 +146,14 @@ make new-analysis TICKER=AAPL NAME="Apple"  # 建立分析資料夾
 - 重要新聞解讀
 - 風險評估與投資策略
 
-**兩種輸出格式**：
-- 📊 **YAML 格式** (新版) - 結構化數據，便於程式處理、數據分析、格式轉換
-- 📝 **Markdown 格式** (舊版) - 直接可讀的報告格式
+**核心特色**：
+- 📝 **文章式 Markdown** (預設) - 結構一致、自然流暢的專業報告
+- 📊 **YAML 格式** (進階) - 結構化數據，便於程式處理、數據分析
 
 **詳細文檔：**
-- [YAML 工作流程](docs/YAML-WORKFLOW.md) - 新版 YAML 格式說明
-- [快速參考](docs/QUICK-REFERENCE.md) - 常用指令速查
-- [每日分析說明](tools/utils/ANALYZE_DAILY_README.md) - 原有 Markdown 格式
+- [報告模板說明](templates/analysis/market-daily-article-template.md) - Markdown 報告結構
+- [YAML 工作流程](docs/YAML-WORKFLOW.md) - YAML 格式說明
+- [每日分析說明](tools/utils/ANALYZE_DAILY_README.md) - 腳本使用方式
 
 ### 📊 自動化資料爬取
 
@@ -244,12 +241,12 @@ make daily       # 傳統 Markdown 格式
 
 ## 🆕 最新更新
 
-### 2025-12-01 - YAML 模板系統上線
-- ✨ 新增 YAML 模板系統 - 結構化市場分析數據格式
-- ✨ `make daily-yaml` - 生成 YAML 格式報告（推薦）
-- ✨ YAML → Markdown 轉換工具
-- ✨ 數據與呈現分離，便於程式處理和數據分析
-- 📚 完整文檔：[YAML-WORKFLOW.md](docs/YAML-WORKFLOW.md)
+### 2025-12-01 - 文章式報告模板系統
+- ✨ 新增結構化報告模板 - 確保格式一致性
+- ✨ 優化為自然流暢的文章風格 - 避免冷冰冰的數據堆砌
+- ✨ `make daily` 現在使用模板生成結構一致的專業報告
+- ✨ 保留 YAML 格式選項 - `make daily-yaml` 適合程式化處理
+- 📚 完整說明：[報告模板](templates/analysis/market-daily-article-template.md)
 
 ### 2025-11-21
 - ✨ 新增 Claude AI 自動化市場分析系統
@@ -257,7 +254,7 @@ make daily       # 傳統 Markdown 格式
 - ✨ 每日生成 15-20 頁專業市場分析報告
 - ✨ 重構工具目錄結構（`tools/utils/`）
 
-**完整更新日誌**: [CHANGELOG-YAML.md](CHANGELOG-YAML.md)
+**更新日誌**: [CHANGELOG-YAML.md](CHANGELOG-YAML.md)
 
 ---
 
