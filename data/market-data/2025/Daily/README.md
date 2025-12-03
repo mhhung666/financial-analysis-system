@@ -66,15 +66,12 @@
 
 ## 更新方式
 
-### 自動更新（推薦）
-
-使用每日自動化腳本更新全球市場指數：
+### 快速更新
 
 ```bash
-./tools/python/fetch_daily_market_news.sh
+make fetch-indices      # 全球指數快照
+make holdings-prices    # 持倉價格快照
 ```
-
-此腳本會同時更新全球市場指數和主要市場新聞。
 
 ### 手動更新
 
@@ -127,16 +124,16 @@ deactivate
 
 | 檔案 | 說明 | 更新方式 |
 |------|------|---------|
-| [global-indices.md](global-indices.md) | 全球市場指數 (18 個指數) | 每日自動更新 |
+| [global-indices.md](global-indices.md) | 全球市場指數 (18 個指數) | `make fetch-indices` 或手動執行 |
 
 ## 使用建議
 
 ### 每日例行更新
-建議在收盤後執行自動化腳本，獲取當日完整資料：
+收盤後執行一次指數與持倉快照：
 
 ```bash
-# 在專案根目錄執行
-./tools/python/fetch_daily_market_news.sh
+make fetch-indices
+make holdings-prices
 ```
 
 ### 盤中查看
@@ -164,7 +161,6 @@ deactivate
 
 - [爬蟲工具說明](../../../tools/python/scrapers/README.md)
 - [Python 工具總覽](../../../tools/python/README.md)
-- [每日自動化腳本](../../../tools/python/fetch_daily_market_news.sh)
 
 ---
 

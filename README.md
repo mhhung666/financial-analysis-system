@@ -8,7 +8,7 @@
 
 這是一個系統化的投資研究工作流，透過標準化模板與自動化工具，協助你：
 
-- 📈 **每日市場追蹤** - 自動爬取市場資料，AI 生成分析報告
+- 📈 **每日市場資料紀錄** - 爬取全球市場指數與持倉價格快照（新聞爬蟲與 AI 分析已移至 `market-intelligence-system`）
 - 📑 **季度財報分析** - 使用結構化模板進行深度研究
 - 💼 **投資組合管理** - 追蹤持倉、績效與風險
 - 🔍 **產業研究** - 建立可重複使用的分析框架
@@ -24,27 +24,20 @@
 make setup
 ```
 
-### 2️⃣ 每日例行工作（推薦）
+### 2️⃣ 取得市場快照
 
 ```bash
-# 一鍵完成每日流程：爬取資料 + AI 分析
-make daily
+# 全球市場指數快照
+make fetch-indices
+
+# 更新持倉價格快照
+make holdings-prices
 ```
 
-這會自動完成：
-- ✅ 爬取全球市場指數
-- ✅ 爬取持倉股票價格與新聞
-- ✅ 使用 Claude AI 生成市場分析報告
-
 輸出結果：
-- `data/market-data/2025/Daily/` - 市場資料
-- `analysis/market/YYYY-MM-DD.md` - AI 分析報告 (文章式 Markdown)
+- `data/market-data/2025/Daily/` - 全球指數與持倉價格快照
 
-✨ **改進**: 報告現在使用結構化模板，確保格式一致性，同時保持自然流暢的文章風格
-
-📊 **進階選項**:
-- `make daily-yaml` - 生成 YAML 格式結構化數據 (適合程式處理)
-- 📚 詳細說明: [YAML 工作流程](docs/YAML-WORKFLOW.md) | [模板說明](templates/analysis/market-daily-article-template.md)
+> 新聞爬蟲與 AI 生成的市場日報已搬到 `../market-intelligence-system`。此專案保留資料抓取腳本與研究模板。
 
 ### 3️⃣ 開始分析股票
 
@@ -98,21 +91,12 @@ financial-analysis-system/
 
 ## 🔧 常用指令
 
-### 每日市場追蹤
+### 市場資料蒐集
 
 ```bash
-# 完整流程（推薦）
-make daily-yaml         # YAML 格式（新版，結構化數據）
-make daily              # Markdown 格式（舊版，直接可讀）
-
-# 分步執行
-make fetch-daily        # 只爬取市場資料
-make holdings-prices-daily  # 只更新持倉價格
-make analyze-daily-yaml # 只執行 AI 分析（YAML）
-make analyze-daily      # 只執行 AI 分析（Markdown）
-
-# 格式轉換
-make yaml-to-md FILE=analysis/market/2025-12-01.yaml
+make fetch-indices           # 爬取全球市場指數快照
+make holdings-prices         # 更新持倉價格（儲存當日快照）
+make yaml-to-md FILE=analysis/market/2025-12-01.yaml  # 將既有 YAML 轉為 Markdown
 ```
 
 ### 資料收集
@@ -138,29 +122,17 @@ make new-analysis TICKER=AAPL NAME="Apple"  # 建立分析資料夾
 
 ## 📖 核心功能詳解
 
-### 🤖 AI 市場分析系統
+### 🤖 AI 市場分析（已移轉）
 
-每日自動生成 15-20 頁的專業市場分析報告，包含：
-- 全球市場總覽與趨勢分析
-- 持倉股票深度分析與建議
-- 重要新聞解讀
-- 風險評估與投資策略
-
-**核心特色**：
-- 📝 **文章式 Markdown** (預設) - 結構一致、自然流暢的專業報告
-- 📊 **YAML 格式** (進階) - 結構化數據，便於程式處理、數據分析
-
-**詳細文檔：**
-- [報告模板說明](templates/analysis/market-daily-article-template.md) - Markdown 報告結構
-- [YAML 工作流程](docs/YAML-WORKFLOW.md) - YAML 格式說明
-- [每日分析說明](tools/utils/ANALYZE_DAILY_README.md) - 腳本使用方式
+每日自動化的市場新聞爬蟲與 AI 報告生成功能已移至 `market-intelligence-system` 專案。若需新聞摘要或每日 AI 報告，請在該專案執行工作流。
 
 ### 📊 自動化資料爬取
 
 支援自動爬取：
 - 18 個全球市場指數
-- Yahoo Finance 股票價格與新聞
+- Yahoo Finance 股票價格
 - 持倉股票的價格追蹤
+- 新聞爬蟲已搬到 `market-intelligence-system`
 
 **詳細文檔：** [tools/python/README.md](tools/python/README.md)
 
@@ -185,11 +157,12 @@ make new-analysis TICKER=AAPL NAME="Apple"  # 建立分析資料夾
    make setup
    ```
 
-2. **執行每日流程**
+2. **取得市場快照**
    ```bash
-   make daily
+   make fetch-indices
+   make holdings-prices
    ```
-   查看生成的報告：`analysis/market/YYYY-MM-DD.md`
+   新聞與 AI 報告請改在 `market-intelligence-system` 執行
 
 3. **設定你的持倉**
    編輯 `portfolio/2025/holdings.md`，參考模板格式
@@ -203,14 +176,13 @@ make new-analysis TICKER=AAPL NAME="Apple"  # 建立分析資料夾
 
 **每日（5 分鐘）**
 ```bash
-make daily-yaml  # 自動化完成（推薦 YAML 格式）
-# 或
-make daily       # 傳統 Markdown 格式
+make fetch-indices
+make holdings-prices
 ```
-查看 AI 分析報告，調整投資決策
+查看指數與持倉快照，調整投資決策
 
 **每週（30 分鐘）**
-- 回顧本週市場分析報告
+- 回顧本週市場走勢與持倉表現
 - 更新 `portfolio/2025/watchlist.md`
 
 **每季（數小時）**
@@ -241,18 +213,25 @@ make daily       # 傳統 Markdown 格式
 
 ## 🆕 最新更新
 
+### 2025-12-03 - 新聞爬蟲與 AI 分析移轉
+- 🛠 新聞爬蟲與每日 AI 報告工作流移至 `market-intelligence-system`
+- 🧹 移除相關腳本與 Makefile 指令，保留資料抓取與研究模板
+- 📄 README 更新，指向新專案的位置
+
 ### 2025-12-01 - 文章式報告模板系統
 - ✨ 新增結構化報告模板 - 確保格式一致性
 - ✨ 優化為自然流暢的文章風格 - 避免冷冰冰的數據堆砌
 - ✨ `make daily` 現在使用模板生成結構一致的專業報告
 - ✨ 保留 YAML 格式選項 - `make daily-yaml` 適合程式化處理
 - 📚 完整說明：[報告模板](templates/analysis/market-daily-article-template.md)
+- ⚠️ 此自動化流程已移轉至 `market-intelligence-system`
 
 ### 2025-11-21
 - ✨ 新增 Claude AI 自動化市場分析系統
 - ✨ 一鍵命令 `make daily` 整合完整流程
 - ✨ 每日生成 15-20 頁專業市場分析報告
 - ✨ 重構工具目錄結構（`tools/utils/`）
+- ⚠️ 自動化分析流程已移轉至 `market-intelligence-system`
 
 **更新日誌**: [CHANGELOG-YAML.md](CHANGELOG-YAML.md)
 

@@ -1,7 +1,7 @@
 # 全球主要市場指數配置
 # 可自訂追蹤市場，新增或移除指數無需修改程式碼
 #
-# fetch_news: true/false - 控制該指數是否爬取新聞
+# 備註: `fetch_news` 為舊欄位，新聞爬蟲已移至 `market-intelligence-system`（本專案不再使用）。
 
 global_indices:
   # 亞洲市場

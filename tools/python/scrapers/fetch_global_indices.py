@@ -178,7 +178,7 @@ def fetch_all_indices(regions=None):
 
         for index_name, index_config in indices.items():
             # 支援新舊兩種格式
-            # 新格式: {'symbol': '^GSPC', 'fetch_news': true}
+            # 新格式: {'symbol': '^GSPC', 'fetch_news': true}  # fetch_news 為舊欄位，現已移轉到 market-intelligence-system
             # 舊格式: '^GSPC'
             if isinstance(index_config, dict):
                 symbol = index_config.get('symbol', '')

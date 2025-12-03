@@ -88,84 +88,7 @@ python3 tools/python/scrapers/fetch_global_indices.py --no-emoji
 - 自動計算漲跌幅並用 🔺/🔻 標示
 - 預設儲存至 `data/market-data/{YEAR}/Daily/global-indices-{YYYY-MM-DD}.md`（年份自動取得）
 
-## 3. 金融新聞爬蟲 (`fetch_market_news.py`)
-
-從 Yahoo Finance 爬取特定股票或市場指數的最新金融新聞。
-
-### 使用範例
-
-**爬取個股新聞：**
-```bash
-# 爬取 Apple 最新新聞（預設 10 則）
-python3 tools/python/scrapers/fetch_market_news.py AAPL
-
-# 爬取 Tesla 最新 5 則新聞並儲存
-python3 tools/python/scrapers/fetch_market_news.py TSLA -l 5 -o data/market-data/2025/News/TSLA-2025-11-18.md
-
-# 爬取 NVIDIA 新聞並輸出為 JSON 格式
-python3 tools/python/scrapers/fetch_market_news.py NVDA --json -o data/market-data/2025/News/NVDA-2025-11-18.json
-
-# 標準用法 - 儲存到 News 目錄
-python3 tools/python/scrapers/fetch_market_news.py GOOGL -o data/market-data/2025/News/GOOGL-2025-11-18.md
-```
-
-**爬取大盤指數新聞：**
-```bash
-# S&P 500 新聞
-python3 tools/python/scrapers/fetch_market_news.py "^GSPC" -o data/market-data/2025/News/SP500-2025-11-18.md
-
-# NASDAQ 新聞
-python3 tools/python/scrapers/fetch_market_news.py "^IXIC" -o data/market-data/2025/News/NASDAQ-2025-11-18.md
-
-# 道瓊工業指數新聞
-python3 tools/python/scrapers/fetch_market_news.py "^DJI" -o data/market-data/2025/News/DowJones-2025-11-18.md
-
-# 恆生指數新聞
-python3 tools/python/scrapers/fetch_market_news.py "^HSI" -o data/market-data/2025/News/HangSeng-2025-11-18.md
-```
-
-> 命名時請沿用 `data/market-data/{YEAR}/News/{SYMBOL}-{YYYY-MM-DD}.md` 格式，方便依日期追蹤。
-
-### 參數說明
-
-- `symbol`: 股票代碼或指數代碼（必填）
-- `-l, --limit`: 新聞數量（預設 10 則）
-- `-o, --output`: 輸出檔案路徑
-- `--json`: 輸出為 JSON 格式（預設 Markdown）
-
-### 支援的代碼
-
-**個股代碼：**
-- 科技股: `AAPL` (Apple), `TSLA` (Tesla), `NVDA` (Nvidia), `MSFT` (Microsoft), `GOOGL` (Google)
-- 金融股: `JPM` (JP Morgan), `BAC` (Bank of America), `GS` (Goldman Sachs)
-- 其他: `UPS`, `AMZN` (Amazon), `META` (Meta/Facebook)
-
-**市場指數代碼：**
-- 美國: `^GSPC` (S&P 500), `^DJI` (Dow Jones), `^IXIC` (NASDAQ)
-- 亞洲: `^HSI` (恆生指數), `^N225` (日經225), `^TWII` (台灣加權)
-
-### 輸出格式
-
-**Markdown 格式**（預設）：
-- 包含標題、摘要、來源、發布時間、連結
-- 自動標示新聞類型（📰 文章 / 🎥 影片）
-- 格式化日期時間為易讀格式
-- 適合直接閱讀和儲存
-
-**JSON 格式**：
-- 結構化資料，適合程式化處理
-- 包含 `id`, `title`, `summary`, `publisher`, `published_at`, `url`, `content_type`
-- 可用於進一步分析或整合
-
-預設儲存路徑：`data/market-data/{YEAR}/News/{SYMBOL}-{YYYY-MM-DD}.md`（年份自動取得）
-
-### 新聞資訊來源
-
-- Yahoo Finance、WSJ、Barrons、Investor's Business Daily 等多元來源
-- 每個股票/指數通常返回約 10 則最新新聞
-- 免費使用，無需 API key
-
-## 4. 持倉股票價格爬蟲 (`fetch_holdings_prices.py`)
+## 3. 持倉股票價格爬蟲 (`fetch_holdings_prices.py`)
 
 從 [portfolio/2025/holdings.md](../../../portfolio/2025/holdings.md) 自動提取股票代碼，並從 Yahoo Finance 獲取當天的即時價格資訊。
 
@@ -193,9 +116,6 @@ python3 tools/python/scrapers/fetch_holdings_prices.py -i portfolio/2024/holding
 
 # 使用 Makefile
 make holdings-prices
-
-# 使用快捷腳本
-./check-holdings.sh
 ```
 
 > 建議使用 Shell 腳本或 Makefile，會自動儲存到 `portfolio/2025/prices-{YYYY-MM-DD}.md`（預設行為）。
@@ -280,7 +200,7 @@ portfolio/2025/prices-{YYYY-MM-DD}.md
 **每日檢查持倉**：
 ```bash
 # 開盤前/收盤後快速查看持倉表現
-./check-holdings.sh
+./tools/python/fetch_holdings_prices.sh --no-save
 ```
 
 **定期存檔**：
@@ -292,7 +212,7 @@ portfolio/2025/prices-{YYYY-MM-DD}.md
 **結合大盤分析**：
 ```bash
 # 先查看大盤
-make fetch-daily
+make fetch-indices
 
 # 再查看持倉
 make holdings-prices
@@ -304,7 +224,6 @@ make holdings-prices
 |------|------|---------|---------|
 | `fetch_market_data.py` | 單一股票歷史價格 | Yahoo Finance | 完整歷史資料 |
 | `fetch_global_indices.py` | 全球大盤指數 | Yahoo Finance | 當日指數快照 |
-| `fetch_market_news.py` | 股票/指數新聞 | Yahoo Finance | 新聞文章列表 |
 | **`fetch_holdings_prices.py`** | **持倉股票當日價格** | Yahoo Finance | **多股票價格快照** |
 
 ### 相關文件

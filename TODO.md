@@ -30,11 +30,7 @@
   - 加入 `SYMBOL-YYYY-MM-DD.md` 命名規範與 `Stocks/` 子目錄，確保文件與實際流程一致
   - **完成日期：2025-11-18**
 
-- [x] **市場資料輸出加入日期時間戳**
-  - `fetch_market_news.py`、`fetch_global_indices.py` 說明新增預設輸出格式
-  - `fetch_daily_market_news.sh` 支援 `-h/--help`，明確標示自動加上 `YYYY-MM-DD`
-  - `fetch_market_data.py` 在 `-h` 中補充命名建議，提醒依日期保存歷史資料
-  - **完成日期：2025-11-18**
+- [x] **市場資料輸出加入日期時間戳**（功能已移轉至 `market-intelligence-system`，本專案保留歷史紀錄）
 
 - [x] **統一季度分析資料夾結構**
   - `analysis/2025Q3` 現已統一為「資料夾 + README + Analysis.md」格式
@@ -60,7 +56,7 @@
   - 之後新增公司或調整產業分類時，只需改單一來源，提高一致性
 
 - [ ] **Python 工具套件化**
-  - 將 `tools/python/` 重組為 `pyproject.toml + src/`，導出 `fra-*` CLI（如 `fra fetch-daily`、`fra new-analysis`）
+  - 將 `tools/python/` 重組為 `pyproject.toml + src/`，導出 `fra-*` CLI（如 `fra fetch-indices`、`fra new-analysis`）
   - 透過 entrypoints 取代 shell 包裝，減少 PATH/權限問題並方便單元測試
   - 有助於之後在 GitHub Actions/docker 中直接 `pip install -e tools/python`
 

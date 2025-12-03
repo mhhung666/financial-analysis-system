@@ -1,5 +1,7 @@
 # 更新日誌 - YAML 工作流程
 
+> 此 YAML 分析與生成流程已移轉至 `market-intelligence-system`，本文件僅保留歷史記錄。
+
 ## 📅 2025-12-01 - YAML 模板系統上線
 
 ### 🎉 新增功能

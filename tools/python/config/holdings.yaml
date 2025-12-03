@@ -1,7 +1,7 @@
 # 投資組合持股配置
 # 可自訂追蹤持股，新增或移除股票無需修改程式碼
 #
-# fetch_news: true/false - 控制該股票是否爬取新聞
+# 備註: `fetch_news` 為舊欄位，新聞爬蟲已移至 `market-intelligence-system`（本專案不再使用）。
 # enabled: true/false - 控制該股票是否啟用（用於暫停某些股票而不刪除配置）
 
 holdings:
